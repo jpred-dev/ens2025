@@ -1,0 +1,109 @@
+;maxmin.ens - ENS2001 Ejemplo de uso - Abril 2002
+;NOTA: La ausencia de acentos es intencionada, para permitir la
+;legibilidad tanto en entornos Windows como Linux
+
+;Calculo del maximo y minimo de una lista de numeros enteros
+;El programa pide una lista de numeros que acabara cuando el
+;usuario introduzca un cero o bien un numero no valido
+;Para comparar numeros se sigue este criterio:
+;   r = a - b
+;   si r>0 -> si desbordamiento -> a < b
+;          -> si no desbordamiento -> a > b
+;   si r<0 -> si desbordamiento -> a > b
+;          -> si no desbordamiento -> a < b
+
+        ;R1 almacenara el valor mayor
+        ;R2 almacenara el valor menor
+        ;R0 almacenara el valor leido
+        WRSTR /PROMPT
+
+        ;lee el primero, si es cero ha terminado
+        ININT .R0
+		CMP .R0, #0
+		BZ $FIN
+        
+		MOVE .R0,.R1
+        MOVE .R0,.R2
+
+        ;lee numeros hasta encontrar un cero
+LECTURA:
+        WRSTR /PROMPT
+        ININT .R0
+        CMP .R0, #0
+        BZ $FIN
+
+        ;si R0>R1 -> R0 es el mayor hasta ahora
+        CMP .R0, .R1
+        BC $CARRY1
+		BP $MAYOR
+
+SIG:
+		CMP .R0, .R2
+		BC $CARRY2
+		BN $MENOR
+		BR $LECTURA
+
+
+FIN:
+        WRSTR /MAXIMO
+        WRINT .R1
+        WRSTR /EOL
+        WRSTR /MINIMO
+        WRINT .R2
+        WRSTR /EOL
+        HALT
+MAYOR:
+        MOVE .R0,.R1
+        BR $SIG
+MENOR:
+        MOVE .R0,.R2
+        BR $LECTURA
+
+
+CARRY1:
+		;Solamente hay carry si:
+		; (R0 >= 0 && (R1 < 0 || R1 > R0)
+		; (R0 < 0 && R1 < 0 && R1 > R0)
+		; Por lo tanto, los dos escenarios en los que R1 > R0 en presencia de carry son:
+		; R0 < 0
+		; R0 >= 0 y R1 > 0
+		
+		;Comenzamos comprobando pues si R0 es negativo. Si lo es, automáticamente es menor que R1
+		CMP .R0, #0
+		BN $SIG
+		
+		;Si no lo es, comprobamos si R1 es positivo. Si lo es, puesto que R0 es positivo, R0 < R1
+		CMP .R1, #0
+		BP $SIG
+		
+		;Si no se cumple ninguna de las dos, R0 > R1
+		BR $MAYOR
+
+
+CARRY2:
+		;Misma lógica que con carry1:
+		; (R0 >= 0 && (R2 < 0 || R2 > R0)
+		; (R0 < 0 && R2 < 0 && R2 > R0)
+		; Por lo tanto, los dos escenarios en los que R2 > R0 en presencia de carry son:
+		; R0 < 0
+		; R0 >= 0 y R2 > 0
+		
+		;Comenzamos comprobando pues si R0 es negativo. Si lo es, automáticamente es menor que R2
+		CMP .R0, #0
+		BN $MENOR
+		
+		;Si no lo es, comprobamos si R2 es positivo. Si lo es, puesto que R0 es positivo, R0 < R2
+		CMP .R2, #0
+		BP $MENOR
+		
+		;Si no se cumple ninguna de las dos, R0 > R2
+		BR $LECTURA
+
+
+        ;cadenas
+PROMPT: DATA "Introduzca un numero: "
+MAXIMO: DATA "El valor maximo introducido es "
+MINIMO: DATA "El valor minimo introducido es "
+EOL:    DATA "\n"
+
+        END
