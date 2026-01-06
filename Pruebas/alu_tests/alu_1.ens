@@ -1,0 +1,29 @@
+;Instrucciones lógicas
+;Extraído del fichero de prueba ENS-PRI-010 de ENS2001.
+
+ORG 0
+
+AND #6,#5
+WRINT .A
+WRSTR /eol
+
+OR #6,#5
+WRINT .A
+WRSTR /eol
+
+XOR #6,#5
+WRINT .A
+WRSTR /eol
+
+MOVE #1,.A
+
+NOT .A
+WRINT .A
+WRSTR /eol
+
+HALT
+
+
+eol: DATA "\n"
+
+END

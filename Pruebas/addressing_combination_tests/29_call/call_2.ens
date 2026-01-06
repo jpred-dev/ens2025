@@ -1,0 +1,4 @@
+;Pruebas de validez del primer operando
+CALL /0
+CALL [.A]
+CALL $1

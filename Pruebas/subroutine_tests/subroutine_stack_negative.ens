@@ -1,0 +1,49 @@
+v;Adaptado de ENS-PRI-012 para ENS2001
+;Eliminada la instrucción CALL /sub2 dentro de la propia subrutina, que causaba bucle infinito
+;Versión para pila decreciente
+
+ORG 0
+
+MOVE #0xFFFF,.SP ; Pila decreciente
+CALL /sub1
+CALL /sub2
+CALL /sub3
+
+HALT
+
+sub1: WRSTR /id1
+WRSTR /eol
+WRSTR /rsp
+WRINT .SP
+WRSTR /eol
+CALL /sub2
+RET
+
+ORG 20000
+
+sub2: WRSTR /id2
+WRSTR /eol
+WRSTR /rsp
+WRINT .SP
+WRSTR /eol
+CALL /sub3
+RET
+
+ORG 40000
+
+sub3: WRSTR /id3
+WRSTR /eol
+WRSTR /rsp
+WRINT .SP
+WRSTR /eol
+RET
+
+ORG 60000
+
+id1: DATA "Subrutina 1"
+id2: DATA "Subrutina 2"
+id3: DATA "Subrutina 3"
+rsp: DATA "Valor de SP="
+eol: DATA "\n"
+
+END

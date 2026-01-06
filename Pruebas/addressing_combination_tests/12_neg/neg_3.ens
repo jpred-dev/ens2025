@@ -1,0 +1,2 @@
+;Prueba de invalidez: primer operando con direccionamiento inmediato
+NEG #0

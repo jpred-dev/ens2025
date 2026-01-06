@@ -1,0 +1,19 @@
+RES 10
+lab1: INC .R1
+
+RES 0xA
+lab2: INC .R2
+
+RES -32000
+lab3: INC .R3
+
+WRINT #lab1
+WRCHAR #10
+WRINT #lab2
+WRCHAR #10
+WRINT #lab3
+WRCHAR #10
+
+HALT
+
+

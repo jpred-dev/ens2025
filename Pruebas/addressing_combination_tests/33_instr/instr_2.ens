@@ -1,0 +1,5 @@
+;Pruebas de validez del primer operando
+INSTR /0
+INSTR [.A]
+INSTR #1[.IX]
+INSTR #1[.IY]

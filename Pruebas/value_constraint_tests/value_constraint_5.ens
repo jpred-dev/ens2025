@@ -1,0 +1,2 @@
+;Prueba de invalidez: entero superando la cota máxima en direccionamiento relativo a índice
+ADD #256[.IX], .R0

@@ -1,0 +1,4 @@
+;Pruebas de validez del primer operando
+BNC /0
+BNC [.A]
+BNC $1

@@ -1,0 +1,3 @@
+;Direccionamiento directo a registro
+MOVE #0, .R0
+DIV #30, .R0

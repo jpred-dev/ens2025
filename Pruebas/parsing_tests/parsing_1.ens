@@ -1,0 +1,2 @@
+;Prueba de invalidez: ausencia de elemento separador entre operandos
+label: ADD #1 #3

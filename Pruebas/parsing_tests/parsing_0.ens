@@ -1,0 +1,2 @@
+;Prueba de invalidez: ausencia de elemento separador entre etiqueta e instrucción
+label HALT

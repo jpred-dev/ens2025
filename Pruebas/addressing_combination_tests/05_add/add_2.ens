@@ -1,0 +1,15 @@
+;Pruebas de validez del primer operando
+ADD #0, .R0
+ADD .R1, .R0
+ADD /0, .R0
+ADD [.R1], .R0
+ADD #1[.IX], .R0
+ADD #1[.IY], .R0
+
+;Pruebas de validez del segundo operando
+ADD #0, #0
+ADD #0, .R0
+ADD #0, /0
+ADD #0, [.R0]
+ADD #0, #1[.IX]
+ADD #0, #1[.IY]

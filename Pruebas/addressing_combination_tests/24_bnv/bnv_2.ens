@@ -1,0 +1,4 @@
+;Pruebas de validez del primer operando
+BNV /0
+BNV [.A]
+BNV $1

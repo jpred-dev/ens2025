@@ -1,0 +1,3 @@
+;Prueba de invalidez: etiqueta duplicada
+lab3: NOP
+lab3: NOP

@@ -1,0 +1,5 @@
+;Esto ensambla correctamente
+NOP
+
+;Esto no, con un error que indica que se espera fin de línea (no se admiten argumentos)
+NOP #0

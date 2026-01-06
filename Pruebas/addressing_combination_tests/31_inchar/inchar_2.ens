@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+INCHAR .A
+INCHAR /0
+INCHAR [.A]
+INCHAR #1[.IX]
+INCHAR #1[.IY]

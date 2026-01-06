@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+DEC .A
+DEC /0
+DEC [.A]
+DEC #1[.IX]
+DEC #1[.IY]

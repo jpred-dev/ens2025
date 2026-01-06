@@ -1,0 +1,5 @@
+;Pruebas de validez del primer operando
+WRSTR /0
+WRSTR [.A]
+WRSTR #1[.IX]
+WRSTR #1[.IY]

@@ -1,0 +1,4 @@
+WRCHAR #99
+BR /0
+
+HALT

@@ -1,0 +1,45 @@
+.table-view .column-header .label {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 14px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #000000;
+}
+
+.combo-box .list-cell {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-text-fill: #000000;
+}
+
+.table-view .scroll-bar:vertical {
+	-fx-pref-width: 15px;
+}
+
+.context-menu .menu-item {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-text-fill: #000000;
+}
+
+.dialog-pane {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-text-fill: #000000;
+}
+
+.dialog-pane .content .label {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-text-fill: #000000;
+}
+
+.dialog-pane .button {
+	-fx-font-family: "Open Sans";
+	-fx-font-size: 12px;
+	-fx-font-weight: normal;
+	-fx-text-fill: #000000;
+}

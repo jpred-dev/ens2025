@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+NOT .A
+NOT /0
+NOT [.A]
+NOT #1[.IX]
+NOT #1[.IY]

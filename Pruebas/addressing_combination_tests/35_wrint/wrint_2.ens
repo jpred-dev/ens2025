@@ -1,0 +1,7 @@
+;Pruebas de validez del primer operando
+WRINT #0
+WRINT .A
+WRINT /0
+WRINT [.A]
+WRINT #1[.IX]
+WRINT #1[.IY]

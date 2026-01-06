@@ -1,0 +1,9 @@
+;Pruebas de instrucciones de dos operandos con direccionamientos tales que ambos operandos caben en la segunda palabra
+MOVE .R0, .R1
+MOVE #23[.IX], #0xFF[.IY]
+MOVE [.R5], [.A]
+
+ADD .R9, #-1[.IY]
+SUB [.R2], .R0
+MUL #255[.IX], [.SR]
+DIV [.A], #0x7A[.IX]

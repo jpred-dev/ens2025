@@ -1,0 +1,2 @@
+;Prueba de invalidez: primer operando con direccionamiento relativo a IY
+BC #1[.IY]

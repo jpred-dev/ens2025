@@ -1,0 +1,4 @@
+;Pruebas de validez del primer operando
+BR /0
+BR [.A]
+BR $1

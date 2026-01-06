@@ -1,0 +1,48 @@
+;Extraído de ENS-PRI-013 para ENS2001
+;Prueba de validez: escritura y lectura mediante distintos direccionamientos.
+			ORG 0
+			
+			MOVE #400, .IX
+			MOVE #1100, .IY
+			MOVE #eol, .R3
+			
+			WRSTR #100[.IX]
+			ININT #-100[.IY]
+			
+			WRSTR /cad11
+			WRINT /entero
+			WRSTR [.R3]
+			
+			WRSTR /cad02
+			INCHAR #-99[.IY]
+			WRSTR /cad12
+			WRCHAR /caracter
+			WRSTR [.R3]
+			
+			WRSTR /cad03
+			INSTR #-98[.IY]
+			WRSTR /cad13
+			WRSTR /cadena
+			WRSTR [.R3]
+			
+			HALT
+
+ORG 500
+
+cad01:		DATA "Introduzca un entero: "
+cad02:		DATA "Introduzca un carácter: "
+cad03:		DATA "Introduzca una cadena de caracteres: "
+cad11:		DATA "El entero leído es: "
+cad12:		DATA "El carácter leído es: "
+cad13:		DATA "La cadena leída es: "
+eol:		DATA "\n"
+
+ORG 1000
+
+entero:		RES 1
+caracter:	RES 1
+
+
+cadena:		RES 0xFF
+
+			END

@@ -1,0 +1,3 @@
+
+;Prueba de invalidez: primer operando con direccionamiento de PC
+XOR $10, .R0

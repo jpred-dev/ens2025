@@ -1,0 +1,4 @@
+;Pruebas de validez del primer operando
+BNZ /0
+BNZ [.A]
+BNZ $1

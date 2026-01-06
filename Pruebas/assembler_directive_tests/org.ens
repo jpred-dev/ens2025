@@ -1,0 +1,57 @@
+;Establecimiento del primer bloque de código
+ORG 50
+MOVE #-1, .R3
+
+;Establecimiento del segundo bloque de código
+ORG 100
+MOVE #-2, .R4
+
+;Establecimiento del tercer bloque de código
+ORG 0xFF
+MOVE #-3, .R5
+
+;Establecimiento del cuarto bloque de código
+ORG -32000
+MOVE #-4, .R6
+
+
+;Impresión del primer bloque de código
+WRINT /50
+WRCHAR #10
+WRINT /51
+WRCHAR #10
+WRINT /52
+WRCHAR #10
+WRCHAR #10
+
+
+;Impresión del segundo bloque de código
+WRINT /100
+WRCHAR #10
+WRINT /101
+WRCHAR #10
+WRINT /102
+WRCHAR #10
+WRCHAR #10
+
+
+;Impresión del tercer bloque de código
+WRINT /0xFF
+WRCHAR #10
+WRINT /0x100
+WRCHAR #10
+WRINT /0x101
+WRCHAR #10
+WRCHAR #10
+
+
+;Impresión del cuarto bloque de código
+WRINT /-32000
+WRCHAR #10
+WRINT /-31999
+WRCHAR #10
+WRINT /-31998
+WRCHAR #10
+WRCHAR #10
+
+HALT

@@ -1,0 +1,2 @@
+;Fallo al ensamblar, se espera final de línea (sobran argumentos)
+WRINT /0 #0

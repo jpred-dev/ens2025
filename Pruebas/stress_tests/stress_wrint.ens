@@ -1,0 +1,4 @@
+WRINT #32767
+BR /0
+
+HALT

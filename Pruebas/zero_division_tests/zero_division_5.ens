@@ -1,0 +1,5 @@
+;Direccionamiento relativo a índice (positivo)
+
+MOVE #1000, .IX
+MOVE #0, #120[.IX]
+DIV #400, #120[.IX]

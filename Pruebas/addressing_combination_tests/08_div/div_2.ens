@@ -1,0 +1,16 @@
+
+;Pruebas de validez del primer operando
+DIV #0, .R0
+DIV .R1, .R0
+DIV /0, .R0
+DIV [.R1], .R0
+DIV #1[.IX], .R0
+DIV #1[.IY], .R0
+
+;Pruebas de validez del segundo operando
+DIV #0, #0
+DIV #0, .R0
+DIV #0, /0
+DIV #0, [.R0]
+DIV #0, #1[.IX]
+DIV #0, #1[.IY]

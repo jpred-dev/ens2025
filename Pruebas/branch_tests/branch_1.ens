@@ -1,0 +1,81 @@
+;Adaptado de ENS-PRI-011 para ENS2001
+;Eliminado el bucle infinito del final.
+
+
+		ORG 0
+
+		BR /e_br
+
+n_br:	CMP #0xFF,#0xFF
+		BZ /e_bz
+
+n_bz:	ADD #0,#1
+		BNZ /e_bnz
+
+n_bnz:	SUB #30,#20
+		BP /e_bp
+
+n_bp:	SUB #20,#30
+		BN /e_bn
+
+n_bn:	ADD #0xFFFF,#3
+		BV /e_bv
+
+n_bv:	MUL #0xFF,#2
+		BNV /e_bnv
+
+n_bnv:	ADD #0x7FFF,#1
+		BC /e_bc
+
+n_bc:	DIV #50,#5
+		BNC /e_bnc
+
+n_bnc:	ADD #0,#0xFFFF
+		BE /e_be
+
+n_be:	ADD #0,#0xFFFE
+
+n_bo:	BO /e_bo
+
+n_h:	HALT
+
+
+
+e_br:	WRSTR /s_br
+		BR /n_br
+e_bz:	WRSTR /s_bz
+		BR /n_bz
+e_bnz:	WRSTR /s_bnz
+		BR /n_bnz
+e_bp:	WRSTR /s_bp
+		BR /n_bp
+e_bn:	WRSTR /s_bn
+		BR /n_bn
+e_bv:	WRSTR /s_bv
+		BR /n_bv
+e_bnv:	WRSTR /s_bnv
+		BR /n_bnv
+e_bc:	WRSTR /s_bc
+		BR /n_bc
+e_bnc:	WRSTR /s_bnc
+		BR /n_bnc
+e_be:	WRSTR /s_be
+		BR /n_be
+e_bo:	WRSTR /s_bo
+		BR /n_h
+
+
+
+s_br:	DATA "BR\n"
+s_bz:	DATA "BZ\n"
+s_bnz:	DATA "BNZ\n"
+s_bp:	DATA "BP\n"
+s_bn:	DATA "BN\n"
+s_bv:	DATA "BV\n"
+s_bnv:	DATA "BNV\n"
+s_bc:	DATA "BC\n"
+s_bnc:	DATA "BNC\n"
+s_be:	DATA "BE\n"
+s_bo:	DATA "BO\n"
+
+END

@@ -1,0 +1,5 @@
+;Direccionamiento relativo a índice (negativo)
+
+MOVE #1000, .IY
+MOVE #0, #-120[.IX]
+MOD #400, #-120[.IX]

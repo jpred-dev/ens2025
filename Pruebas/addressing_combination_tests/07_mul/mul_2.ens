@@ -1,0 +1,16 @@
+
+;Pruebas de validez del primer operando
+MUL #0, .R0
+MUL .R1, .R0
+MUL /0, .R0
+MUL [.R1], .R0
+MUL #1[.IX], .R0
+MUL #1[.IY], .R0
+
+;Pruebas de validez del segundo operando
+MUL #0, #0
+MUL #0, .R0
+MUL #0, /0
+MUL #0, [.R0]
+MUL #0, #1[.IX]
+MUL #0, #1[.IY]

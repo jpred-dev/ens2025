@@ -1,0 +1,2 @@
+;Prueba de invalidez: entero superando la cota máxima en direccionamiento inmediato
+ADD #65536, .R0

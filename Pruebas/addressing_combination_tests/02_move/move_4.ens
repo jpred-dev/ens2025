@@ -1,0 +1,2 @@
+;Prueba de invalidez: segundo operando con direccionamiento literal
+MOVE #0, #0

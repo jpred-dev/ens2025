@@ -1,0 +1,85 @@
+;Prueba de biestables únicos
+
+;Biestable Z:
+
+CMP #1,#1
+
+;la salida debe ser 0x0001
+WRINT .SR
+WRCHAR #10
+
+;Biestable C:
+
+ADD #65535, #4
+
+;la salida debe ser 0x0002
+WRINT .SR
+WRCHAR #10
+
+;Biestable V:
+
+SUB #-32768, #2
+
+;la salida debe ser 0x0004
+WRINT .SR
+WRCHAR #10
+
+;Biestable P:
+
+ADD #0, #1
+
+;la salida debe ser 0x0008
+WRINT .SR
+WRCHAR #10
+
+;Biestable S:
+
+ADD #-2, #1
+
+;la salida debe ser 0x0010
+WRINT .SR
+WRCHAR #10
+
+
+;Pruebas de biestables múltiples:
+
+;Biestables ZC
+ADD #65535, #1
+
+;la salida debe ser 0x0003
+WRINT .SR
+WRCHAR #10
+
+
+;Biestables SCP
+MUL #65535, #2
+
+;la salida debe ser 0x001A
+WRINT .SR
+WRCHAR #10
+
+
+;Biestables VPS
+DIV #-32768, #-1
+
+;la salida debe ser 0x001C
+WRINT .SR
+WRCHAR #10
+
+
+;Biestables SCPV
+MUL #-32768, #-1
+
+;la salida debe ser 0x001E
+WRINT .SR
+WRCHAR #10
+
+
+;Prueba de biestable H:
+
+HALT
+
+;Por motivos evidentes, no se puede imprimir el valor de SR en este caso.
+;Su valor, sin embargo, debe ser 0x003E, no 0x0020 como correspondería a H=1 sin ningún otro biestable
+;Esto se debe a que la instrucción HALT no limpia el resto de biestables con el fin de conservar
+;el estado del simulador al terminar.

@@ -1,0 +1,3 @@
+END
+
+Se puede escribir cualquier cosa a partir de la directiva sin necesidad de hacer comentarios porque el ensamblador se detiene al procesarla.

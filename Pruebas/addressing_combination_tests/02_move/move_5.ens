@@ -1,0 +1,2 @@
+;Prueba de invalidez: segundo operando con direccionamiento de PC
+MOVE #0, $10

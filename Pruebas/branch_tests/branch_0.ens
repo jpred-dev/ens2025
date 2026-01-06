@@ -1,0 +1,22 @@
+;Prueba de validez: desplazamientos válidos
+
+BR /100
+
+ORG 200
+BR /-50
+
+;Desplazamiento con "desbordamiento"
+ORG -5
+BR $lab1
+
+ORG 120
+lab1: BR $lab2
+
+ORG -3
+lab2: BR $3
+
+ORG 5
+BR $-100
+
+ORG -100
+BR $127

@@ -1,0 +1,38 @@
+;Extraído de ENS-PRI-013 para ENS2001
+;Prueba de validez: escritura y lectura mediante direccionamiento directo a memoria con etiquetas
+			ORG 0
+			
+			WRSTR /cad01
+			ININT /entero
+			
+			WRSTR /cad11
+			WRINT /entero
+			WRSTR /eol
+			
+			WRSTR /cad02
+			INCHAR /caracter
+			WRSTR /cad12
+			WRCHAR /caracter
+			WRSTR /eol
+			
+			WRSTR /cad03
+			INSTR /cadena
+			WRSTR /cad13
+			WRSTR /cadena
+			WRSTR /eol
+			
+			HALT
+
+cad01:		DATA "Introduzca un entero"
+cad02:		DATA "Introduzca un carácter"
+cad03:		DATA "Introduzca una cadena de caracteres"
+cad11:		DATA "El entero leído es: "
+cad12:		DATA "El carácter leído es: "
+cad13:		DATA "La cadena leída es: "
+eol:		DATA "\n"
+
+entero:		RES 1
+caracter:	RES 1
+cadena:		RES 0xFF
+
+			END

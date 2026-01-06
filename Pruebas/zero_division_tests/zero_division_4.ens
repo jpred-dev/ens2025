@@ -1,0 +1,5 @@
+;Direccionamiento indirecto
+MOVE #1000 .R1
+MOVE #0, [.R1]
+
+DIV #10, [.R1]

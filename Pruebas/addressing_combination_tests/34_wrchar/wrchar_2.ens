@@ -1,0 +1,7 @@
+;Pruebas de validez del primer operando
+WRCHAR #0
+WRCHAR .A
+WRCHAR /0
+WRCHAR [.A]
+WRCHAR #1[.IX]
+WRCHAR #1[.IY]

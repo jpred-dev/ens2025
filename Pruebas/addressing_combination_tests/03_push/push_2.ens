@@ -1,0 +1,7 @@
+;Pruebas de validez del primer operando
+PUSH #0
+PUSH .A
+PUSH /0
+PUSH [.A]
+PUSH #1[.IX]
+PUSH #1[.IY]

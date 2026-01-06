@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+ININT .A
+ININT /0
+ININT [.A]
+ININT #1[.IX]
+ININT #1[.IY]

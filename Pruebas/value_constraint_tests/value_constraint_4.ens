@@ -1,0 +1,2 @@
+;Prueba de invalidez: entero superando la cota mínima en direccionamiento relativo a índice
+ADD #-129[.IX], .R0

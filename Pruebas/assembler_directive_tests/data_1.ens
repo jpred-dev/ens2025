@@ -1,0 +1,2 @@
+;Prueba de invalidez: se abre una cadena pero no se cierra, por lo que se producirá un error
+DATA "

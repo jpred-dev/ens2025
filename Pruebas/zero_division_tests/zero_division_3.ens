@@ -1,0 +1,3 @@
+;Direccionamiento directo a memoria
+MOVE #0, /1000
+DIV #30, /1000

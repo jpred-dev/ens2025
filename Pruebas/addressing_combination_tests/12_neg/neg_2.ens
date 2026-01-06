@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+NEG .A
+NEG /0
+NEG [.A]
+NEG #1[.IX]
+NEG #1[.IY]

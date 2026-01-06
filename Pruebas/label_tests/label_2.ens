@@ -1,0 +1,2 @@
+;Prueba de invalidez: etiqueta no definida
+WRINT /undefined

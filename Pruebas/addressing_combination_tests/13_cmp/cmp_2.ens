@@ -1,0 +1,16 @@
+
+;Pruebas de validez del primer operando
+CMP #0, .R0
+CMP .R1, .R0
+CMP /0, .R0
+CMP [.R1], .R0
+CMP #1[.IX], .R0
+CMP #1[.IY], .R0
+
+;Pruebas de validez del segundo operando
+CMP #0, #0
+CMP #0, .R0
+CMP #0, /0
+CMP #0, [.R0]
+CMP #0, #1[.IX]
+CMP #0, #1[.IY]

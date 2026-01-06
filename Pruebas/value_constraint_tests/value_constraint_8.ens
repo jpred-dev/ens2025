@@ -1,0 +1,37 @@
+;Prueba de validez: valores que exceden la cota máxima con signo pero son menores que la cota máxima sin signo
+;Esto provoca que sean convertidos a representación con signo automáticamente en modos distintos al direccionamiento a memoria
+
+ADD #65535, .R0
+ADD /65535, .R0
+ADD #32768, .R0
+ADD /32768, .R0
+ADD #128[.IX], .R0
+ADD #255[.IX], .R0
+BR $128
+BR $255
+
+;En el visor de código debería leerse esto al visualizarse con representación decimal con signo:
+
+;ADD #-1, .R0
+;ADD /65535, .R0
+;ADD #-32768, .R0
+;ADD /32768, .R0
+;ADD #-128[.IX], .R0
+;ADD #-1[.IX], .R0
+;BR $-128
+;BR $-1
+
+;Del mismo modo, el uso de valores negativos que no excedan el valor negativo mínimo permitido se convertirá a representación sin signo
+;en el modo de direccionamiento directo a memoria, quedando igual en el resto
+
+ADD #-1, .R0
+ADD /-1, .R0
+ADD #-32768, .R0
+ADD /-32768, .R0
+
+;En el visor de código debería leerse esto al visualizarse con representación decimal con signo:
+
+;ADD #-1, .R0
+;ADD /65535, .R0
+;ADD #-32768, .R0
+;ADD /32768, .R0

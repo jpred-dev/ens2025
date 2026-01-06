@@ -1,0 +1,6 @@
+;Pruebas de validez del primer operando
+POP .A
+POP /0
+POP [.A]
+POP #1[.IX]
+POP #1[.IY]
